@@ -29,7 +29,9 @@ html, body {
 #header-first-section {
   border: 1px solid black;
   width: 100%;
-  height: 65px;
+  height: 52%;
+  margin-top: 5px;
+  padding-top: 15px;
 }
 
 #header-first-section div {
@@ -37,29 +39,33 @@ html, body {
 }
 
 #top-google-logo {
-  border: 1px solid black;
   width: 130px;
-  height: 65px;
+  height: 100%;
   margin-right: 30px;
+  background-image: 
+    url("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: center;
 }
 
 #search-bar {
   border: 1px solid black;  
   border-radius: 50px;
-  height: 65px;
+  height: 100%;
   width: 630px;
 }
 
 #user-section {
   border: 1px solid black;
   width: 130px;
-  height: 65px;
+  height: 100%;
   float: right;
 }
 
 #header-second-section {
   border: 1px solid black;
-  height: 58px;
+  height: 48%;
 }
 
 #header-second-section div {
@@ -68,14 +74,14 @@ html, body {
 
 #nav-section {
   border: 1px solid black;
-  height: 58px;
+  height: 100%;
   width: 620px;
   margin-left: 170px;
 }
 
 #safe-search {
   border: 1px solid black;
-  height: 58px;
+  height: 100%;
   width: 130px;
   float: right;
 }

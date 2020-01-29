@@ -18,6 +18,8 @@ html, body {
   border: 1px solid black;
 }
 
+/* Header Starts */
+
 #header-container {
   border: 1px solid black;
   width: 100%;
@@ -81,7 +83,7 @@ html, body {
 /* Main Section Starts */
 #main-container {
   border: 1px solid black;
-  height: 3000px;
+  overflow: hidden;
   width: 100%;
   padding-left: 170px; 
 }
@@ -117,13 +119,51 @@ html, body {
   width: 630px;
 }
 
-#search-related {}
+#search-related {
+  border: 1px solid black;
+  height: 149px;
+  width: 620px;
+}
 
 #paragraph {
   border: 1px solid black;
-  height: 123px;
-  width: 370px
+  height: 34px;
+  width: 620px;
 }
+
+#related-result {
+  border: 1px solid black;
+  height: 115px;
+  width: 620px;
+}
+
+#bottom-google-logo-section {
+  border: 1px solid black;
+  height: 57px;
+  width: 630px;
+}
+
+/* footer Section Starts */
+
+#footer-container {
+  border: 1px solid black;
+  height: 83px;
+  width: 100%;
+  background: #f2f2f2;
+}
+
+#first-footer {
+  border: 1px solid black;
+  height: 50%;
+  width: 100%;
+}
+
+#second-footer {
+  border: 1px solid black;
+  height: 50%;
+  width: 100%;
+}
+
 
 
 

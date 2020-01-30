@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header-container {
+  background: #555;
+  display: flex;
+  flex-direction: column;
+  height: 123px;
+}
+
+#header-container div {
+  background: #f4f4;
+  text-align: center;
+}
+
+#header-first-section {
+  display: flex;
+  height: 65px;
+}
+
+
+#header-first-section  div {
+  background: #f3f3;
+  text-align: center;
+}
+
+#top-google-logo {
+  width: 130px;
+  margin-right: 40px;
+}
+
+#search-bar {
+  width: 630px;
+  /* flex-basis is also a width */
+}
+
+#user-section {
+  width: 130px;
+  margin-left: auto;
+}
+
+#header-second-section {
+  display: flex;
+  height: 58px;
+}
+
+#nav-section {
+  margin-left: 170px;
+  width: 630px;
+}
+
+#safe-search {
+  margin-left: auto;
+  width: 130px;
+}

@@ -23,11 +23,15 @@
 // }
 
 // if preceded by 0x, considered as hexadecimal
-var x = 123;
-var y = new Number(123);
+// var x = 123;
+// var y = new Number(123);
 
-var x = new Number(500);
-var y = new Number(500);
-console.log(x == y);
-console.log(x === y);
+// var x = new Number(500);
+// var y = new Number(500);
+// console.log(x == y);
+// console.log(x === y);
+
+// The numbers are called operands
+// The operation is defined by an operator
+// 100(Operand) +(Operator) 50(Operand)
 

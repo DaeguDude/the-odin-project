@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: arial, sans-serif;
+  line-height: 1.3rem;
+}
+
 #header-container {
   display: flex;
   flex-direction: column;
@@ -50,6 +55,7 @@
 #user-section {
   width: 130px;
   margin-left: auto;
+  background-image: url('//ssl.gstatic.com/gb/images/i1_1967ca6a.png');
 }
 
 #header-second-section {
@@ -83,7 +89,6 @@
 }
 
 #safe-search {
-  border: 1px solid black;
   margin-left: auto;
   display: flex;
   justify-content: center;
@@ -96,4 +101,93 @@
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
+}
+
+
+/* Main Starts Here */
+#result {
+  font-size: 14px;
+  color: #707577;
+  padding: 0 8px;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+}
+
+.flex-item {
+  width: 600px;
+  margin-top: 20px;
+}
+
+#main-result {
+  background: tomato;
+  width: 650px;
+  height: 200px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#main-result-paragraph {
+  font-size: 16px;
+}
+
+#main-result cite {
+  padding: 0px;
+  margin-top: 30px;
+}
+
+#main-result .search-link {
+  padding: 0px;
+  display: block;
+  margin-top: 5px;
+}
+
+#freq-question {
+  background: tomato;
+  width: 650px;
+  height: 220px;
+  border-radius: 10px;
+}
+
+#search-related {
+  background: tomato;
+  height: 220px;
+  width: 650px;
+}
+
+.search-link {
+  font-size: 20px;
+  color: #1a0dab;
+  margin: 0 0 3px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+
+.search-link:hover {
+  text-decoration: underline; 
+}
+
+.search-paragraph {
+  font-size: 14px;
+  color: #3c4043;
+  padding: 5px;
+}
+
+cite {
+  font-size: 14px;
+  color: #3c4043;
+  display: block;
+  padding: 5px;
+}
+
+
+
+#sort-down {
+  position: relative;
+  padding-left: 5px;
+  top: -2px;
 }

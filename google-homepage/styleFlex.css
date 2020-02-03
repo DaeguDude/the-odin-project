@@ -294,6 +294,42 @@ cite {
   color: #5f6368;
 }
 
+/* Google logo section */
+/* #bottom-google-logo {
+  width: 310px;
+  height: 23px;
+  margin-left: 170px;
+  background-image: url(
+    "google-bottom-image.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
+
+#bottom-google-logo-section {
+  width: 310px;
+  height: 57px;
+  margin-bottom: 30px;
+  margin-left: 150px;
+  background-image: url('google-image-bottom.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110%;
+}
+
+
+
+
+
+#bottom-google-logo-section td a {
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  color: #0080ff;
+}
+
+
+
 
 #f-bar-2 {
   border-top: 1px solid #e4e4e4;

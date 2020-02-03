@@ -31,6 +31,7 @@ body {
 
 #top-google-logo {
   width: 130px;
+  min-width: 130px;
   margin-right: 15px;
   background-image: 
     url("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
@@ -43,30 +44,71 @@ body {
 #search-bar {
   width: 630px;
   /* flex-basis is also a width */
+  /* For the search-bar i */
+  position: relative;
 }
 
 #search {
   width: 630px;
-  height: 100%;
+  height: 45px;
   border-radius: 30px;
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  padding: 15px;
+  font-size: 16px;
 }
+
+#search:focus {
+  outline: none;
+}
+
+#search:hover {
+  box-shadow: 1px 3px 5px rgba(102, 102, 102, 0.3),
+              -1px -2px 5px rgba(102, 102, 102, 0.3);
+}
+
+.fa-microphone {
+  color: #0080ff;
+  position: absolute;
+  top: 32%;
+  left: 88%;
+}
+
+#search-bar .fa-search {
+  color: #0080ff;
+  position: absolute;
+  top: 32%;
+  left: 94%;
+}
+
+
+
+
+/* horizontal offset, vertical offset, blur radius, spread radius, color */
 
 #user-section {
   width: 130px;
   margin-left: auto;
-  background-image: url('//ssl.gstatic.com/gb/images/i1_1967ca6a.png');
+  background-image: url('user-section.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-size: 75%;
+  margin-top: 10px;
+  min-width: 130px;
 }
 
 #header-second-section {
   display: flex;
   height: 58px;
   vertical-align: middle;
+  color: #5f6368;
+  border-bottom: 1px solid rgba(102, 102, 102, 0.3);
 }
 
 #nav-section {
   margin-left: 160px;
   width: 630px;
-  padding-top: 15px;
+  min-width: 630px;
 }
 
 #nav-section ul {
@@ -79,12 +121,24 @@ body {
   font-size: 14px;
 }
 
-#nav-section ul li {
-  margin-right: 27px;
+#nav-section ul a { 
+  text-decoration: none;
+  color: #5f6368;
+  text-align: center;
+  padding: 25px 15px 0px 6px;
 }
 
-#nav-section ul li:nth-child(6) {
-  margin-right: 75px;
+#nav-section ul a:hover {
+  color: #0080ff;
+  border-bottom: #0080ff 4px solid;
+}
+
+#nav-section ul a:nth-child(7) {
+  margin-left: 70px;
+}
+
+#nav-section ul a:nth-child(n+7):hover {
+  border-bottom: none;
 }
 
 #safe-search {
@@ -100,6 +154,9 @@ body {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
+  font-size: 14px;
+  margin-top: 15px;
+  min-width: 130px;
 }
 
 
@@ -127,7 +184,7 @@ body {
 }
 
 #main-result {
-  border: 1px solid black;
+  border: 1px solid rgba(102, 102, 102, 0.3);
   width: 650px;
   height: 200px;
   border-radius: 10px;
@@ -151,18 +208,23 @@ body {
 
 #freq-question {
   width: 650px;
+  border: 1px solid rgba(102, 102, 102, 0.3);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.flex-item:nth-child(4) {
+  padding-left: 0px;
 }
 
 
 .question {
   position: relative;
   height: 44px;
+  border-bottom: 1px solid rgba(102, 102, 102, 0.3);
   width: 100%;
   display: inline-block;
-  border: 1px solid #222;
   padding: 9px 40px 9px 16px;
 }
 

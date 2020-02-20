@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="main.js"></script>
   <script src="https://kit.fontawesome.com/fadac8530c.js" crossorigin="anonymous"></script>
   
 </head>
 <body>
   <div id="container">
+    <div id="results"></div>
+    
     <div id="rps-boxes">
       <div id="rock" class="rps-item">
         <button type="button" class="rps-button">
@@ -32,6 +33,9 @@
   </div>
 
 </body>
-
+<!-- I happen to put the link here because while I put at the top it always
+returns the null. People say because javascript loads first than HTML file
+So there's nothing to select of and returns null. -->
+<script type="text/javascript" src="main.js"></script>
 
 </html>

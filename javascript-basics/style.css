@@ -14,10 +14,19 @@ body {
   height: 100vh;
 }
 
+#results {
+  border: 1px solid white;
+  width: 90%;
+  height: 150px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 #rps-boxes {
   border: 1px solid white;
   width: 90%;
-  height: 50%;
+  height: 20%;
+  margin-top: 200px;
   margin-left: 5%;
   margin-right: 5%;
   display: flex;

@@ -18,11 +18,11 @@
 
 
 // This will return either 'rock', 'paper' or 'scissors'.
-// function computerPlay() {
-//   items = ['Rock', 'Paper', 'Scissors']
-//   element = Math.floor(Math.random() * items.length)
-//   return items[element]
-// }
+function selectChoice() {
+  items = ['rock', 'paper', 'scissors']
+  element = Math.floor(Math.random() * items.length)
+  return items[element]
+}
 
 // // Single round of Rock Paper Scissors
 // // Two parameters(playerSelection, computerSelection)
@@ -71,3 +71,27 @@
 // }
 
 // game();
+
+
+const divs = document.querySelectorAll('.rps-item');
+
+let userChoice = '';
+let computerChoice = '';
+
+divs.forEach( (div) => {
+  div.addEventListener('click', (e) => {
+    
+    // Both of them will have either rock, paper, or scissors
+    userChoice = div.getAttribute('id');
+    computerChoice = selectChoice();
+    console.log(userChoice);
+    console.log(computerChoice);
+    
+  });
+});
+
+
+
+
+
+

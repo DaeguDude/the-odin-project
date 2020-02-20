@@ -24,68 +24,83 @@ function selectChoice() {
   return items[element]
 }
 
-// // Single round of Rock Paper Scissors
-// // Two parameters(playerSelection, computerSelection)
-// // Return a string that declares the winner of the round 
-// function playRound(playerSelection, computerSelection) {
+// Single round of Rock Paper Scissors
+// Two parameters(playerSelection, computerSelection)
+// Return a string that declares the winner of the round 
+function playRound(playerSelection, computerSelection) {
   
-//   playerSelection = playerSelection.toLowerCase();
-//   computerSelection = computerSelection.toLowerCase();
+  // win, lose, tie
+  return decideWinner(playerSelection, computerSelection);
+}
 
-//   return decideWinner(playerSelection, computerSelection);
-// }
-
-// function decideWinner(playerSelection, computerSelection) {
-//   if( // win
-//       (playerSelection === 'rock' && computerSelection === 'scissors') ||
-//       (playerSelection === 'paper' && computerSelection === 'rock') ||
-//       (playerSelection === 'scissors' && computerSelection === 'paper')
-//   ) {
-//     return (`You won! ${playerSelection} beats ${computerSelection}`) 
-//   } 
+// Returns the results
+function decideWinner(playerSelection, computerSelection) {
+  if( // win
+      (playerSelection === 'rock' && computerSelection === 'scissors') ||
+      (playerSelection === 'paper' && computerSelection === 'rock') ||
+      (playerSelection === 'scissors' && computerSelection === 'paper')
+  ) {
+    return 'win';
+  } 
   
-//   else if ( // lose
-//       (playerSelection === 'rock' && computerSelection === 'paper') ||
-//       (playerSelection === 'paper' && computerSelection === 'scissors') ||
-//       (playerSelection === 'scissors' && computerSelection === 'rock')
-//   ) {
-//     return (`You lost. ${playerSelection} loses to ${computerSelection}`) 
-//   } 
+  else if ( // lose
+      (playerSelection === 'rock' && computerSelection === 'paper') ||
+      (playerSelection === 'paper' && computerSelection === 'scissors') ||
+      (playerSelection === 'scissors' && computerSelection === 'rock')
+  ) {
+    return 'lose';
+  } 
   
-//   else if(playerSelection === computerSelection) { // draw
-//     return (`It's tie, ${playerSelection} and ${computerSelection}`)
-//   } 
-  
-//   else { // It's not rock paper or scissors.
-//     return playRound(prompt("Enter your choice again"), computerPlay())
-//   }
-// }
+  else { // draw
+    return 'tie';
+  } 
+}
 
-// function game() {
-//   for (let i=0; i<5; i++) {
-//     let userChoice = prompt("It's about to begin! Enter your choice!");
-//     let computerChoice = computerPlay();
-
-//     console.log(playRound(userChoice, computerChoice));
-//   }
-// }
-
-// game();
+function checkScore(numOne, numTwo) {
+  if (numOne >= 5 || numTwo >= 5) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 
 const divs = document.querySelectorAll('.rps-item');
 
 let userChoice = '';
 let computerChoice = '';
+let result = '';
+let userScore = 0;
+let computerScore = 0;
+
 
 divs.forEach( (div) => {
-  div.addEventListener('click', (e) => {
-    
+  div.addEventListener('click', (e) => { 
     // Both of them will have either rock, paper, or scissors
     userChoice = div.getAttribute('id');
     computerChoice = selectChoice();
-    console.log(userChoice);
-    console.log(computerChoice);
+    result = playRound(userChoice, computerChoice);
+    
+    if(result === 'win') {
+      userScore++;
+      // I need to have userScore section and change the value
+    } else if(result === 'lose') {
+      computerScore++;
+      // I need to have computerScore section and change the value
+    } else {
+      // tie
+    }
+
+    // Finish the game
+    if (checkScore(userScore, computerScore)) {
+      
+      // If true, we need to reset.
+      prompt("Someone reached 5 points. Would you like to play again?");
+    }
+
+    console.log(`userScore: ${userScore}`);
+    console.log(`computerScore: ${computerScore}`);
+    
     
   });
 });

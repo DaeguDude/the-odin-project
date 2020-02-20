@@ -14,7 +14,15 @@ body {
   height: 100vh;
 }
 
-#results {
+#round-result {
+  border: 1px solid white;
+  width: 90%;
+  height: 150px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#score-board {
   border: 1px solid white;
   width: 90%;
   height: 150px;

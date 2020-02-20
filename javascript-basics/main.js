@@ -56,12 +56,22 @@ function decideWinner(playerSelection, computerSelection) {
   } 
 }
 
+// Check the score
 function checkScore(numOne, numTwo) {
   if (numOne >= 5 || numTwo >= 5) {
     return true;
   } else {
     return false;
   }
+}
+
+// Reset the game
+function reset() {
+  userScore = 0;
+  computerScore = 0;
+  userScoreBoard.textContent = userScore;
+  computerScoreBoard.textContent = computerScore;
+  
 }
 
 
@@ -73,6 +83,10 @@ let result = '';
 let userScore = 0;
 let computerScore = 0;
 
+let userScoreBoard = '';
+let computerScoreBoard = '';
+let resultBoard = '';
+
 
 divs.forEach( (div) => {
   div.addEventListener('click', (e) => { 
@@ -81,27 +95,48 @@ divs.forEach( (div) => {
     computerChoice = selectChoice();
     result = playRound(userChoice, computerChoice);
     
+    // Get resultBoard ready to present the result
+    resultBoard = document.querySelector('#round-result');
     if(result === 'win') {
+      resultBoard.textContent = 'You win!';
       userScore++;
-      // I need to have userScore section and change the value
+      userScoreBoard = document.querySelector('#user-score');
+      userScoreBoard.textContent = userScore;
+
+      
     } else if(result === 'lose') {
+      resultBoard.textContent = 'You lose!';
       computerScore++;
+      computerScoreBoard = document.querySelector('#computer-score');
+      computerScoreBoard.textContent = computerScore;
       // I need to have computerScore section and change the value
     } else {
-      // tie
+      resultBoard.textContent = "It's tie!";
     }
 
-    // Finish the game
+    // Check the score to finish or replay
     if (checkScore(userScore, computerScore)) {
-      
-      // If true, we need to reset.
-      prompt("Someone reached 5 points. Would you like to play again?");
+      let stopOrPlay = '';
+      // Maybe we can add just a little time to show the result before prompt 
+      // runs? Yeah it worked. So apparently, get html to show with what
+      // our DOM object did, it takes time I guess.
+      setTimeout(() => {
+        stopOrPlay = prompt(`Someone reached 5 points. Would you like to play 
+                      again?`);
+        
+        // null can cause error
+        if (stopOrPlay != null) {
+          stopOrPlay = stopOrPlay.toLowerCase();
+        }
+        
+        if (stopOrPlay === 'yes' || stopOrPlay === '') {
+          console.log("yes");
+          reset();
+        } else {
+          console.log("No");
+        }
+      }, 100);
     }
-
-    console.log(`userScore: ${userScore}`);
-    console.log(`computerScore: ${computerScore}`);
-    
-    
   });
 });
 

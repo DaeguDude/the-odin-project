@@ -30,11 +30,11 @@ function selectChoice() {
 function playRound(playerSelection, computerSelection) {
   
   // win, lose, tie
-  return decideWinner(playerSelection, computerSelection);
+  return roundWinner(playerSelection, computerSelection);
 }
 
 // Returns the results
-function decideWinner(playerSelection, computerSelection) {
+function roundWinner(playerSelection, computerSelection) {
   if( // win
       (playerSelection === 'rock' && computerSelection === 'scissors') ||
       (playerSelection === 'paper' && computerSelection === 'rock') ||
@@ -54,6 +54,17 @@ function decideWinner(playerSelection, computerSelection) {
   else { // draw
     return 'tie';
   } 
+}
+
+// Check overall winner
+function announceWinner(userScore, compScore) {
+  if(userScore > compScore) {
+    resultBoard.textContent = `You won! User: ${userScore} - Computer: 
+                              ${computerScore}`;
+  } else {
+    resultBoard.textContent = `Computer won! User: ${userScore} - Computer: 
+                              ${computerScore}`;
+  }
 }
 
 // Check the score
@@ -126,8 +137,8 @@ divs.forEach( (div) => {
     if (checkScore(userScore, computerScore)) {
       // After checking a score, if it seems like if either of them has
       // reached 5 points, we can pop up the reset button.
-     
       setTimeout(() => {
+        announceWinner(userScore, computerScore);
         resetBox.style.display = "block";
         rpsBox.style.display = 'none';
       }, 100);

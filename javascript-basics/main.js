@@ -1,22 +1,3 @@
-// 1. Remove logic that plays exactly five rounds
-
-// 2. Create three buttons, one for each selection
-// Add an event listener to the buttons that calls my playRound function
-// with the correct playerSelection every time a button is clicked.
-
-// 3. Add a div for displaying results and change all of my console.log
-// into DOM methods 
-
-// 4. Display the running score, and announce a winner of the game once
-// one player reaches 5 points.
-
-// 5. You will likely have to refactor your original code, that's okay
-// Reworking old code is an important part of the programmer's life
-
-// 6. When everything is finished, go back to the RPC project and add the
-// new version
-
-
 // This will return either 'rock', 'paper' or 'scissors'.
 function selectChoice() {
   items = ['rock', 'paper', 'scissors']

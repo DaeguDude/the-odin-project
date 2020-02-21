@@ -90,8 +90,10 @@ resetBox.addEventListener('click', (e) => {
   reset();
   // And hide again.
   resetBox.style.display = "none";
+  rpsBox.style.display = 'flex';
 })
 
+const rpsBox = document.querySelector('#rps-boxes');
 const divs = document.querySelectorAll('.rps-item');
 
 divs.forEach( (div) => {
@@ -127,6 +129,7 @@ divs.forEach( (div) => {
      
       setTimeout(() => {
         resetBox.style.display = "block";
+        rpsBox.style.display = 'none';
       }, 100);
     }
   });

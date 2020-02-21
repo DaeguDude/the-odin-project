@@ -71,11 +71,8 @@ function reset() {
   computerScore = 0;
   userScoreBoard.textContent = userScore;
   computerScoreBoard.textContent = computerScore;
-  
+  resultBoard.textContent = 'START THE GAME';
 }
-
-
-const divs = document.querySelectorAll('.rps-item');
 
 let userChoice = '';
 let computerChoice = '';
@@ -86,7 +83,16 @@ let computerScore = 0;
 let userScoreBoard = '';
 let computerScoreBoard = '';
 let resultBoard = '';
+let resetBox = '';
 
+resetBox = document.querySelector('#reset-box');
+resetBox.addEventListener('click', (e) => {
+  reset();
+  // And hide again.
+  resetBox.style.display = "none";
+})
+
+const divs = document.querySelectorAll('.rps-item');
 
 divs.forEach( (div) => {
   div.addEventListener('click', (e) => { 
@@ -116,25 +122,11 @@ divs.forEach( (div) => {
 
     // Check the score to finish or replay
     if (checkScore(userScore, computerScore)) {
-      let stopOrPlay = '';
-      // Maybe we can add just a little time to show the result before prompt 
-      // runs? Yeah it worked. So apparently, get html to show with what
-      // our DOM object did, it takes time I guess.
+      // After checking a score, if it seems like if either of them has
+      // reached 5 points, we can pop up the reset button.
+     
       setTimeout(() => {
-        stopOrPlay = prompt(`Someone reached 5 points. Would you like to play 
-                      again?`);
-        
-        // null can cause error
-        if (stopOrPlay != null) {
-          stopOrPlay = stopOrPlay.toLowerCase();
-        }
-        
-        if (stopOrPlay === 'yes' || stopOrPlay === '') {
-          console.log("yes");
-          reset();
-        } else {
-          console.log("No");
-        }
+        resetBox.style.display = "block";
       }, 100);
     }
   });

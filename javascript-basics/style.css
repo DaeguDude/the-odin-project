@@ -30,6 +30,18 @@ body {
   margin-right: 5%;
 }
 
+#reset-box {
+  display: none;
+  width: 200px;
+  height: 200px;
+  border: 1px solid white;
+}
+
+#reset-btn {
+  width: 100%;
+  height: 100%;
+}
+
 #rps-boxes {
   border: 1px solid white;
   width: 90%;

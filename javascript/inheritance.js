@@ -44,14 +44,7 @@ console.log(aBanana.name);
 // and methods from both the Plant and Fruit functions.
 console.log(aBanana.showNameAndColor());
 
-aBanana.country = "Brazil";
-console.log(aBanana.country);
 
-aBanana.isOrganic = true;
-console.log(aBanana.isOrganic);
-
-console.log(aBanana.name);
-console.log(aBanana.color);
 
 
 
